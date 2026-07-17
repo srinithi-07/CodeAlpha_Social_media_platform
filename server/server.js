@@ -1,36 +1,38 @@
+require("dotenv").config();
+
 const express = require("express");
-const dotenv = require("dotenv");
 const cors = require("cors");
 
 const connectDB = require("./config/db");
-const authRoutes = require("./routes/authRoutes");
-const auth = require("./middleware/auth");
-const postRoutes = require("./routes/postRoutes");
-dotenv.config();
 
-connectDB();
+const auth = require("./middleware/auth");
+
+const authRoutes = require("./routes/authRoutes");
+const postRoutes = require("./routes/postRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 
 const app = express();
+
+// Connect Database
+connectDB();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/posts", postRoutes);
-
 // Home Route
 app.get("/", (req, res) => {
-    res.send("Social Media API Running...");
+    res.send("🚀 Social Media API is running...");
 });
 
-// Protected Route (JWT Test)
+// API Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/posts", postRoutes);
+app.use("/api/comments", commentRoutes);
+
+// Protected Profile Route
 app.get("/api/profile", auth, (req, res) => {
-    res.status(200).json({
-        message: "Welcome!",
-        user: req.user
-    });
+    res.status(200).json(req.user);
 });
 
 // Start Server
