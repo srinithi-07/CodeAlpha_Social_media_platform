@@ -5,11 +5,18 @@ const auth = require("../middleware/auth");
 
 const {
     createPost,
-    getPosts
+    getPosts,
+    deletePost,
+    toggleLike
 } = require("../controllers/postController");
 
 router.post("/", auth, createPost);
 
 router.get("/", getPosts);
+
+router.delete("/:id", auth, deletePost);
+
+// Like / Unlike
+router.put("/:id/like", auth, toggleLike);
 
 module.exports = router;
