@@ -116,10 +116,30 @@ const toggleLike = async (req, res) => {
         });
     }
 };
+// Get Posts by User
+const getPostsByUser = async (req, res) => {
+    try {
 
+        const posts = await Post.find({
+            author: req.params.userId
+        })
+        .populate("author", "username profilePic")
+        .sort({ createdAt: -1 });
+
+        res.status(200).json(posts);
+
+    } catch (err) {
+
+        res.status(500).json({
+            message: err.message
+        });
+
+    }
+};
 module.exports = {
     createPost,
     getPosts,
+    toggleLike,
     deletePost,
-    toggleLike
+    getPostsByUser
 };

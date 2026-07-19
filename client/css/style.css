@@ -1,0 +1,143 @@
+/* Google Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+
+    --background: #F4F7FC;
+    --card: #FFFFFF;
+
+    --text: #1F2937;
+    --text-light: #6B7280;
+
+    --border: #E5E7EB;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    --radius: 18px;
+
+    --transition: .3s ease;
+
+}
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+}
+
+/* Remove default styles */
+
+button,
+input,
+textarea {
+
+    font-family: inherit;
+
+}
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+button {
+
+    cursor: pointer;
+
+    border: none;
+
+     display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+/* Main container */
+
+.container {
+
+    width: min(90%, 800px);
+
+    margin: 40px auto;
+
+}
+
+/* Cards */
+
+.card {
+
+    background: var(--card);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid var(--border);
+
+}
+
+/* Primary Button */
+
+.btn-primary {
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    font-size: .95rem;
+
+    font-weight: 500;
+
+    transition: var(--transition);
+
+}
+
+.btn-primary:hover {
+
+    background: var(--primary-hover);
+
+    transform: translateY(-2px);
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #C9D3E3;
+
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #AEBBD1;
+
+}

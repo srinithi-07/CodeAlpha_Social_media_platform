@@ -3,7 +3,12 @@ const router = express.Router();
 
 const auth = require("../middleware/auth");
 
-const { toggleFollow } = require("../controllers/userController");
+const {
+    toggleFollow,
+    getUserProfile
+} = require("../controllers/userController");
+
+router.get("/:id", auth, getUserProfile);
 
 router.put("/follow/:id", auth, toggleFollow);
 

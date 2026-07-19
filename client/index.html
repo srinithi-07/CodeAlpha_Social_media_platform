@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SocialHub</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            SocialHub
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="profile.html">Profile</a>
+
+            <button id="logoutBtn"  class="btn-primary">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Create Post -->
+        <section class="create-post">
+
+            <h2>Create Post</h2>
+
+            <textarea
+                id="caption"
+                placeholder="Share your thoughts...">
+            </textarea>
+
+            <button id="postBtn" class="btn-primary">
+                Create Post
+            </button>
+
+        </section>
+
+        <!-- Feed -->
+        <section
+            id="posts"
+            class="feed">
+        </section>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/home.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="profile-container">
+
+            <div class="profile-card">
+
+                <div class="profile-header">
+
+                    <div class="profile-avatar" id="profileAvatar">
+                        U
+                    </div>
+
+                    <h2 id="username">Username</h2>
+
+                    <p id="email">Email</p>
+
+                    <p id="bio">Bio: -</p>
+
+                </div>
+
+                <div class="profile-stats">
+
+                    <div class="stat">
+                        <h3 id="followers">0</h3>
+                        <p>Followers</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3 id="following">0</h3>
+                        <p>Following</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile-posts">
+
+                <h2>My Posts</h2>
+
+                <div id="myPosts"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+</html>
